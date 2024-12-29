@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Family Legal Rights Awareness Platform</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <!-- Add more navigation items here -->
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/learn-more">Learn More</a>
+        </nav>
+        <!-- Add Search Bar Here -->
+        <form action="{{ url_for('search') }}" method="GET" style="margin-top: 10px;">
+            <input 
+                type="text" 
+                name="q" 
+                placeholder="Search articles or resources..." 
+                style="padding: 5px; width: 300px;" 
+            />
+            <button type="submit" style="padding: 5px;">Search</button>
+        </form>
+    </header>
     <main>
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
 </body>
 </html>
